@@ -136,13 +136,13 @@ header.scrolled .nav{padding:14px 0}
 .serv-row{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:24px;padding:30px 14px;
   border-bottom:1px solid var(--line);cursor:pointer;position:relative;transition:padding .4s ease,color .4s ease;overflow:hidden}
 .serv-row .fill{position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:0}
-.serv-row>*{position:relative;z-index:1}
+.serv-row>*{position:relative;z-index:1;min-width:0}
 .serv-row:hover{padding-left:34px;color:var(--cream)}
 .serv-row:hover .fill{transform:translateY(0)}
 .serv-row:hover .s-idx{color:var(--coral)}
 .serv-row:hover .s-arr{color:var(--coral);transform:rotate(-45deg) translateX(4px)}
 .s-idx{font-family:var(--mono);font-size:14px;color:var(--ink-soft)}
-.s-title{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:-.02em}
+.s-title{font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3.4vw,2.6rem);letter-spacing:-.02em;overflow-wrap:break-word}
 .s-desc{font-size:15px;color:inherit;opacity:.7;margin-top:6px;font-family:var(--sans);font-weight:400}
 .s-arr{font-size:30px;transition:transform .4s ease,color .4s ease}
 
@@ -249,6 +249,7 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
   .step{grid-template-columns:60px 1fr;gap:18px}
   .step p{grid-column:1/-1}
   .serv-row{grid-template-columns:44px 1fr auto;gap:16px;padding:24px 6px}
+  .serv-row .s-title{font-size:clamp(1.2rem,4.4vw,1.7rem)}
   .serv-row:hover{padding-left:14px}
   .form{grid-template-columns:1fr}
   .badge{display:none}

@@ -249,8 +249,8 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
   .manifesto p,.manifesto .big-quote{max-width:none}
 }
 @media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important}
-  [data-reveal]{opacity:1;transform:none}
+  [data-reveal]{opacity:1!important;transform:none!important;transition:none!important}
+  [data-float]{transform:none!important}
 }
 </style>
 </head>
@@ -296,7 +296,7 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
       <button class="btn btn-ghost" data-cursor onclick="document.getElementById('cases').scrollIntoView()">Смотреть кейсы</button>
     </div>
   </div>
-  <div class="scroll-hint"><span>скролл</span><span class="ln"></span></div>
+  <div class="scroll-hint"><span class="ln"></span></div>
 </section>
 
 <!-- MARQUEE -->

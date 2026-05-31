@@ -48,6 +48,8 @@ img{max-width:100%;display:block}
   transition:width .25s ease,height .25s ease,background .25s ease;will-change:transform}
 .cursor.hot{width:64px;height:64px;background:#fff}
 @media (hover:none){.cursor{display:none}}
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--coral);z-index:9500;will-change:width}
 
 /* layout */
 .wrap{width:min(1280px,92vw);margin:0 auto}
@@ -117,7 +119,7 @@ header.scrolled .nav{padding:14px 0}
 @keyframes scrollx{to{transform:translateX(-50%)}}
 
 /* ---------- STATS ---------- */
-.stats{padding:110px 0}
+.stats{padding:72px 0}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:54px}
 .stat .big{font-family:var(--serif);font-weight:800;font-size:clamp(2.8rem,6vw,5rem);line-height:1;letter-spacing:-.03em}
 .stat .big .pre{color:var(--coral)}
@@ -125,9 +127,11 @@ header.scrolled .nav{padding:14px 0}
 .stat{border-top:2px solid var(--ink);padding-top:20px}
 
 /* ---------- SERVICES ---------- */
-.services{background:var(--cream-2);padding:120px 0}
+.services{background:var(--cream-2);padding:72px 0}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
-.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.03em;line-height:1;margin-top:18px;max-width:16ch}
+.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:-.03em;line-height:1;margin-top:18px;max-width:16ch;position:relative;display:inline-block}
+.sec-head h2::after{content:'';position:absolute;left:0;bottom:-14px;height:4px;width:66px;background:var(--coral);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .3s}
+.sec-head h2.is-in::after{transform:scaleX(1)}
 .serv-list{border-top:1px solid var(--line)}
 .serv-row{display:grid;grid-template-columns:64px 1fr auto;align-items:center;gap:24px;padding:30px 14px;
   border-bottom:1px solid var(--line);cursor:pointer;position:relative;transition:padding .4s ease,color .4s ease;overflow:hidden}
@@ -143,7 +147,7 @@ header.scrolled .nav{padding:14px 0}
 .s-arr{font-size:30px;transition:transform .4s ease,color .4s ease}
 
 /* ---------- CASES ---------- */
-.cases{padding:120px 0}
+.cases{padding:72px 0}
 .cases-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:54px}
 .case{position:relative;border-radius:26px;padding:38px;min-height:340px;display:flex;flex-direction:column;justify-content:space-between;
   overflow:hidden;color:var(--cream);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
@@ -160,7 +164,7 @@ header.scrolled .nav{padding:14px 0}
 .case .name{font-weight:600;font-size:18px;margin-top:18px}
 
 /* ---------- PROCESS (dark) ---------- */
-.process{background:var(--ink);color:var(--cream);padding:120px 0}
+.process{background:var(--ink);color:var(--cream);padding:72px 0}
 .process .eyebrow{color:#b8ad9d}
 .process h2{color:var(--cream)}
 .steps{margin-top:54px;border-top:1px solid rgba(243,236,223,.16)}
@@ -171,7 +175,7 @@ header.scrolled .nav{padding:14px 0}
 .step p{color:#c3b9aa;font-size:15.5px;max-width:42ch}
 
 /* ---------- MANIFESTO ---------- */
-.manifesto{padding:130px 0;position:relative}
+.manifesto{padding:84px 0;position:relative}
 .manifesto p{font-family:var(--serif);font-weight:500;font-size:clamp(1.6rem,4.2vw,3.4rem);line-height:1.18;letter-spacing:-.02em}
 .manifesto .big-quote{font-size:clamp(1.7rem,4.4vw,3.5rem);line-height:1.2;letter-spacing:-.025em;font-weight:500;max-width:24ch}
 .manifesto em{color:var(--coral);font-style:normal}
@@ -180,7 +184,7 @@ header.scrolled .nav{padding:14px 0}
 .badge .core{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--coral)}
 
 /* ---------- TESTIMONIALS ---------- */
-.testi{background:var(--cream-2);padding:120px 0}
+.testi{background:var(--cream-2);padding:72px 0}
 .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
 .tcard{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:32px;display:flex;flex-direction:column;gap:20px;transition:transform .4s ease,box-shadow .4s ease}
 .tcard:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(21,17,12,.1)}
@@ -192,7 +196,7 @@ header.scrolled .nav{padding:14px 0}
 .tcard .who small{color:var(--ink-soft);font-size:13px}
 
 /* ---------- FAQ ---------- */
-.faq{padding:120px 0}
+.faq{padding:72px 0}
 .faq-list{margin-top:50px;border-top:1px solid var(--line)}
 .fitem{border-bottom:1px solid var(--line)}
 .fq{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:28px 0;display:flex;
@@ -204,7 +208,7 @@ header.scrolled .nav{padding:14px 0}
 .fa p{padding:0 0 28px;color:var(--ink-soft);font-size:16px;line-height:1.6;max-width:62ch}
 
 /* ---------- CTA ---------- */
-.cta{background:var(--coral);color:var(--cream);padding:130px 0;position:relative;overflow:hidden}
+.cta{background:var(--coral);color:var(--cream);padding:84px 0;position:relative;overflow:hidden}
 .cta h2{font-family:var(--serif);font-weight:800;font-size:clamp(2.4rem,6.4vw,5.4rem);line-height:.98;letter-spacing:-.03em;max-width:16ch}
 .cta .lead{font-size:clamp(1.05rem,1.6vw,1.3rem);margin-top:24px;max-width:44ch;opacity:.94}
 .form{margin-top:46px;display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px}
@@ -258,6 +262,7 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
 </head>
 <body>
 <div class="grain"></div>
+<div class="progress" id="progress"></div>
 <div class="cursor" id="cursor"></div>
 
 <!-- NAV -->
@@ -391,25 +396,25 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
     <div class="cases-grid">
       <article class="case c1" data-cursor data-reveal>
         <div class="tag">Кофейня · 3 месяца</div>
-        <div class="res">+312%</div>
+        <div class="res">+<span data-count="312">0</span>%</div>
         <div class="desc">охватов и +1 800 подписчиков за счёт серии Reels о крафте кофе</div>
         <div class="name">«Зерно»</div>
       </article>
       <article class="case c2" data-cursor data-reveal style="transition-delay:.1s">
         <div class="tag">Бренд одежды · 5 месяцев</div>
-        <div class="res">ROAS 640%</div>
+        <div class="res">ROAS <span data-count="640">0</span>%</div>
         <div class="desc">18 000 новых подписчиков и стабильные продажи прямо из соцсетей</div>
         <div class="name">LUMA</div>
       </article>
       <article class="case c3" data-cursor data-reveal style="transition-delay:.15s">
         <div class="tag">Клиника · 2 месяца</div>
-        <div class="res">47 заявок</div>
+        <div class="res"><span data-count="47">0</span> заявок</div>
         <div class="desc">в неделю с коротких видео и геотаргета по городу</div>
         <div class="name">«Маяк»</div>
       </article>
       <article class="case c4" data-cursor data-reveal style="transition-delay:.2s">
         <div class="tag">Ресторан · 4 месяца</div>
-        <div class="res">×4 брони</div>
+        <div class="res">×<span data-count="4">0</span> брони</div>
         <div class="desc">очередь на месяц вперёд и узнаваемый визуальный стиль</div>
         <div class="name">«Сад»</div>
       </article>
@@ -481,6 +486,14 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
   </div>
 </section>
 
+<!-- MARQUEE 2 -->
+<div class="marquee rev">
+  <div class="track">
+    <span>Растём вместе</span><span>Контент</span><span>Охваты</span><span>Заявки</span><span>Любовь к бренду</span><span>Результат</span>
+    <span>Растём вместе</span><span>Контент</span><span>Охваты</span><span>Заявки</span><span>Любовь к бренду</span><span>Результат</span>
+  </div>
+</div>
+
 <!-- CTA -->
 <section class="cta" id="cta">
   <div class="wrap">
@@ -527,9 +540,11 @@ footer{background:var(--ink);color:var(--cream);padding:80px 0 40px}
 <script>
 (function(){
   // ---- nav scroll state ----
-  var header=document.getElementById('header');
+  var header=document.getElementById('header'),progress=document.getElementById('progress');
   window.addEventListener('scroll',function(){
     if(window.scrollY>40)header.classList.add('scrolled');else header.classList.remove('scrolled');
+    var h=document.documentElement;var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1);
+    if(progress)progress.style.width=Math.min(p*100,100)+'%';
   });
 
   // ---- mobile menu ----
